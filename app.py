@@ -8,7 +8,7 @@ app = Flask(__name__)
 def homepage():
     db = sqlite3.connect("urls.db")
     
-    urls = db.execute("SELECT * FROM Urls")
+    urls = db.execute("SELECT * FROM Urls ORDER BY shortened_tag ASC")
 
     urls = urls.fetchall()
 

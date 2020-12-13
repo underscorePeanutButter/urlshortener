@@ -11,7 +11,7 @@
         <h1 class="title">Lucas' URL Shortener</h1>
         <h1 class="subtitle">Shortened URL</h1>
 
-        <h1 class="section-header">You can now access your page at: /url/{{ shortened_tag }}</h1>
+        <h1 class="section-header">You can now access your page at: <a href='/url/{{ shortened_tag }}'>/url/{{ shortened_tag }}</a></h1>
         <a href="{{ url_for('homepage') }}">return</a>
     </body>
 </html>
