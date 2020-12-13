@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Lucas' URL Shortener - Shortened URL</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body class="content-body">
+        <h1 class="title">Lucas' URL Shortener</h1>
+        <h1 class="subtitle">Shortened URL</h1>
+
+        <h1 class="section-header">You can now access your page at: /url/{{ shortened_tag }}</h1>
+        <a href="{{ url_for('homepage') }}">return</a>
+    </body>
+</html>

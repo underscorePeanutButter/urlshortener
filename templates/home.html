@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Lucas' URL Shortener - Home</title>
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <script>
+            /* const Http = new XMLHttpRequest();
+
+            function submit_url() {
+                var shortened_tag = document.getElementById("shortened_tag");
+                var full_url = document.getElementById("full_url");
+                
+                Http.open("POST", "/shorten")
+                Http.send({"shortened_tag": ""})
+
+                Http.onreadystatechange == function() {
+                    console.log(Http.responseText);
+                }
+            }; */
+        </script>
+    </head>
+
+    <body class="content-body">
+        <h1 class="title">Lucas' URL Shortener</h1>
+        <h1 class="subtitle">Homepage</h1>
+
+        <h1 class="section-header">Shorten a URL</h1>
+        <form class="creation-form" action="/shorten", method="POST">
+            <label for="full_url">Full URL:</label>
+            <input type="text" name="full_url" id="full_url" /><br />
+            <label for="shortened_tag">Shortened 'Tag':</label>
+            <input type="text" name="shortened_tag" id="shortened_tag" /><br />
+            <input type="submit" value="Create" />
+        </form>
+
+        <h1 class="section-header">Existent URLs</h1>
+        {% for url in urls %}
+            <p style="margin-left: 2%;"><i>url/{{ url[0] }}</i> -> <i>{{ url[1] }}</i></p>
+        {% endfor %}
+    </body>
+</html>
